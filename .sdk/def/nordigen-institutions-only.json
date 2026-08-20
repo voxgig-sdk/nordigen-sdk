@@ -1,0 +1,81 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Nordigen Institutions API",
+    "version": "1.0.0",
+    "description": "List and read Nordigen (GoCardless Bank Account Data) institutions."
+  },
+  "servers": [
+    { "url": "https://bankaccountdata.gocardless.com/api/v2" }
+  ],
+  "security": [
+    { "bearerAuth": [] }
+  ],
+  "paths": {
+    "/institutions": {
+      "get": {
+        "operationId": "listInstitutions",
+        "summary": "List institutions",
+        "parameters": [
+          { "name": "country", "in": "query", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Institutions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Institution" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/institutions/{id}": {
+      "get": {
+        "operationId": "getInstitution",
+        "summary": "Retrieve an institution",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested institution",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Institution" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Institution": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "bic": { "type": "string" },
+          "transaction_total_days": { "type": "string" },
+          "countries": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "logo": { "type": "string" }
+        }
+      }
+    }
+  }
+}

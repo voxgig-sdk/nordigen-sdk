@@ -1,0 +1,27 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      description: "List and read Nordigen (GoCardless Bank Account Data) institutions."
+      security: {
+        in: "header"
+        name: "Authorization"
+        prefix: "Bearer"
+        scheme: "bearerAuth"
+        type: "http"
+      }
+      servers: [
+        {
+          url: "https://bankaccountdata.gocardless.com/api/v2"
+        }
+      ]
+      summary: "List and read Nordigen (GoCardless Bank Account Data) institutions."
+      title: "Nordigen Institutions API"
+      version: "1.0.0"
+      website: "https://bankaccountdata.gocardless.com"
+    }
+  }
+}
+

@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "institution": {
+      "INSTITUTION00": {
+        "bic": "s3c",
+        "countries": [],
+        "id": "INSTITUTION00",
+        "logo": "s3f",
+        "name": "s40",
+        "transaction_total_days": "s41"
+      },
+      "INSTITUTION01": {
+        "bic": "s78",
+        "countries": [],
+        "id": "INSTITUTION01",
+        "logo": "s7b",
+        "name": "s7c",
+        "transaction_total_days": "s7d"
+      },
+      "INSTITUTION02": {
+        "bic": "sb4",
+        "countries": [],
+        "id": "INSTITUTION02",
+        "logo": "sb7",
+        "name": "sb8",
+        "transaction_total_days": "sb9"
+      }
+    }
+  },
+  "new": {
+    "institution": {
+      "institution_ref01": {
+        "bic": "sf0",
+        "countries": [],
+        "logo": "sf3",
+        "name": "sf4",
+        "transaction_total_days": "sf5"
+      }
+    }
+  }
+}
