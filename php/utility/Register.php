@@ -1,0 +1,70 @@
+<?php
+declare(strict_types=1);
+
+// Nordigen SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+NordigenUtility::setRegistrar(function (NordigenUtility $u): void {
+    $u->clean = [NordigenClean::class, 'call'];
+    $u->done = [NordigenDone::class, 'call'];
+    $u->make_error = [NordigenMakeError::class, 'call'];
+    $u->feature_add = [NordigenFeatureAdd::class, 'call'];
+    $u->feature_hook = [NordigenFeatureHook::class, 'call'];
+    $u->feature_init = [NordigenFeatureInit::class, 'call'];
+    $u->fetcher = [NordigenFetcher::class, 'call'];
+    $u->make_fetch_def = [NordigenMakeFetchDef::class, 'call'];
+    $u->make_context = [NordigenMakeContext::class, 'call'];
+    $u->make_options = [NordigenMakeOptions::class, 'call'];
+    $u->make_request = [NordigenMakeRequest::class, 'call'];
+    $u->make_response = [NordigenMakeResponse::class, 'call'];
+    $u->make_result = [NordigenMakeResult::class, 'call'];
+    $u->make_point = [NordigenMakePoint::class, 'call'];
+    $u->make_spec = [NordigenMakeSpec::class, 'call'];
+    $u->make_url = [NordigenMakeUrl::class, 'call'];
+    $u->param = [NordigenParam::class, 'call'];
+    $u->prepare_auth = [NordigenPrepareAuth::class, 'call'];
+    $u->prepare_body = [NordigenPrepareBody::class, 'call'];
+    $u->prepare_headers = [NordigenPrepareHeaders::class, 'call'];
+    $u->prepare_method = [NordigenPrepareMethod::class, 'call'];
+    $u->prepare_params = [NordigenPrepareParams::class, 'call'];
+    $u->prepare_path = [NordigenPreparePath::class, 'call'];
+    $u->prepare_query = [NordigenPrepareQuery::class, 'call'];
+    $u->graphql_body = [NordigenGraphql::class, 'body'];
+    $u->graphql_errors = [NordigenGraphql::class, 'errors'];
+    $u->result_basic = [NordigenResultBasic::class, 'call'];
+    $u->result_body = [NordigenResultBody::class, 'call'];
+    $u->result_headers = [NordigenResultHeaders::class, 'call'];
+    $u->transform_request = [NordigenTransformRequest::class, 'call'];
+    $u->transform_response = [NordigenTransformResponse::class, 'call'];
+});
